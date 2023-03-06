@@ -1,0 +1,21 @@
+02:12:53 **** Incremental Build of configuration Debug for project uart_receive ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:106:23: warning: assignment to 'uint8_t' {aka 'unsigned char'} from 'char *' makes integer from pointer without a cast [-Wint-conversion]
+  106 |    UART2_rxBuffer[12] ="\n";
+      |                       ^
+arm-none-eabi-g++ -o "uart_receive.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\IftekharulAlam\STM32CubeIDE\workspace_1.11.2\uart_receive\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="uart_receive.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: uart_receive.elf
+ 
+arm-none-eabi-size   uart_receive.elf 
+arm-none-eabi-objdump -h -S  uart_receive.elf  > "uart_receive.list"
+   text	   data	    bss	    dec	    hex	filename
+  12368	     20	   1748	  14136	   3738	uart_receive.elf
+Finished building: default.size.stdout
+ 
+Finished building: uart_receive.list
+ 
+
+02:12:54 Build Finished. 0 errors, 1 warnings. (took 861ms)
+

@@ -1,0 +1,17 @@
+22:52:35 **** Build of configuration Debug for project blinkled ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F101xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "blinkled.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\IftekharulAlam\Desktop\New folder\blinkled\STM32F101C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="blinkled.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: blinkled.elf
+ 
+arm-none-eabi-size   blinkled.elf 
+arm-none-eabi-objdump -h -S  blinkled.elf  > "blinkled.list"
+   text	   data	    bss	    dec	    hex	filename
+   4588	     20	   1572	   6180	   1824	blinkled.elf
+Finished building: default.size.stdout
+ 
+Finished building: blinkled.list
+ 
+
+22:52:36 Build Finished. 0 errors, 0 warnings. (took 1s.51ms)
+

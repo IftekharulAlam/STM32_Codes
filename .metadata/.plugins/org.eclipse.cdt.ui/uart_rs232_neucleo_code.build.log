@@ -1,0 +1,21 @@
+01:52:11 **** Incremental Build of configuration Debug for project uart_rs232_neucleo_code ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:106:23: warning: initializer-string for array of 'unsigned char' is too long
+  106 |    uint8_t Test[10] = "Hello World !!!\r\n"; //Data to send
+      |                       ^~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "uart_rs232_neucleo_code.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\IftekharulAlam\STM32CubeIDE\workspace_1.11.2\uart_rs232_neucleo_code\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="uart_rs232_neucleo_code.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: uart_rs232_neucleo_code.elf
+ 
+arm-none-eabi-size   uart_rs232_neucleo_code.elf 
+arm-none-eabi-objdump -h -S  uart_rs232_neucleo_code.elf  > "uart_rs232_neucleo_code.list"
+   text	   data	    bss	    dec	    hex	filename
+   9232	     20	   1708	  10960	   2ad0	uart_rs232_neucleo_code.elf
+Finished building: default.size.stdout
+ 
+Finished building: uart_rs232_neucleo_code.list
+ 
+
+01:52:12 Build Finished. 0 errors, 1 warnings. (took 901ms)
+
