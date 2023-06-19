@@ -397,11 +397,11 @@ int main(void) {
  8000530:	2100      	movs	r1, #0
  8000532:	4804      	ldr	r0, [pc, #16]	; (8000544 <main+0x3c>)
  8000534:	f002 fbe4 	bl	8002d00 <HAL_TIM_PWM_Start>
-//
-//
-//
-//		sprintf(msg, "%hu\r\n", adc_data[0]);
-//		HAL_UART_Transmit(&huart2, (uint8_t*) msg, strlen(msg), HAL_MAX_DELAY);
+	/* USER CODE BEGIN WHILE */
+	while (1) {
+		/* USER CODE END WHILE */
+
+		/* USER CODE BEGIN 3 */
 		line_follow();
  8000538:	f000 fbf4 	bl	8000d24 <line_follow>
  800053c:	e7fc      	b.n	8000538 <main+0x30>

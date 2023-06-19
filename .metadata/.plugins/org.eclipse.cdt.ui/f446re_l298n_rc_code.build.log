@@ -1,0 +1,34 @@
+23:16:10 **** Incremental Build of configuration Debug for project f446re_l298n_rc_code ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:132:33: warning: passing argument 2 of 'HAL_UART_Receive_DMA' makes pointer from integer without a cast [-Wint-conversion]
+  132 |   HAL_UART_Receive_DMA(&huart2, incomingByte, 4);
+      |                                 ^~~~~~~~~~~~
+      |                                 |
+      |                                 char
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:411,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:727:76: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'char'
+  727 | HAL_StatusTypeDef HAL_UART_Receive_DMA(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+      |                                                                   ~~~~~~~~~^~~~~
+../Core/Src/main.c: In function 'wheel':
+../Core/Src/main.c:526:15: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+  526 |  analogWrite1(abs(rm));
+      |               ^~~
+arm-none-eabi-gcc -o "f446re_l298n_rc_code.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\IftekharulAlam\STM32CubeIDE\workspace_1.12.1\f446re_l298n_rc_code\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="f446re_l298n_rc_code.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: f446re_l298n_rc_code.elf
+ 
+arm-none-eabi-size   f446re_l298n_rc_code.elf 
+arm-none-eabi-objdump -h -S  f446re_l298n_rc_code.elf  > "f446re_l298n_rc_code.list"
+   text	   data	    bss	    dec	    hex	filename
+  14464	     24	   1784	  16272	   3f90	f446re_l298n_rc_code.elf
+Finished building: default.size.stdout
+ 
+Finished building: f446re_l298n_rc_code.list
+ 
+
+23:16:11 Build Finished. 0 errors, 2 warnings. (took 891ms)
+

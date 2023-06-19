@@ -126,14 +126,6 @@ int main(void) {
 		/* USER CODE END WHILE */
 
 		/* USER CODE BEGIN 3 */
-
-//		char msg[10];
-//
-//
-//
-//
-//		sprintf(msg, "%hu\r\n", adc_data[0]);
-//		HAL_UART_Transmit(&huart2, (uint8_t*) msg, strlen(msg), HAL_MAX_DELAY);
 		line_follow();
 	}
 	/* USER CODE END 3 */
