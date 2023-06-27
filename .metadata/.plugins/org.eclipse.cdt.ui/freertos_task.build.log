@@ -1,0 +1,10 @@
+23:34:13 **** Build of configuration Debug for project freertos_task ****
+make -j4 all 
+arm-none-eabi-size   freertos_task.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16392	     24	  18016	  34432	   8680	freertos_task.elf
+Finished building: default.size.stdout
+ 
+
+23:34:14 Build Finished. 0 errors, 0 warnings. (took 1s.156ms)
+
